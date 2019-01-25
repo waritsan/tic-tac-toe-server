@@ -16,6 +16,7 @@ boardRouter.route('/')
 
 boardRouter.route('/create')
   .post((req, res) => {
+    console.log(req.body)
     let board = new Board({
       squares: req.body.squares
     })
@@ -25,6 +26,7 @@ boardRouter.route('/create')
         console.error(err)
         return
       }
+      res.set('Access-Control-Allow-Origin', '*')
       res.json(board)
     })
   })

@@ -18,7 +18,7 @@ boardRouter.route('/create')
   .post((req, res) => {
     console.log(req.body)
     let board = new Board({
-      squares: req.body.squares
+      history: req.body.history
     })
     board.save(err => {
       if (err) {
@@ -26,7 +26,6 @@ boardRouter.route('/create')
         console.error(err)
         return
       }
-      res.set('Access-Control-Allow-Origin', '*')
       res.json(board)
     })
   })

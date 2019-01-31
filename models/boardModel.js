@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
 
 var schema = new mongoose.Schema({
+  name: { type: String, required: true, unique: true, dropDups: true },
   history: [{
     squares: { type: Array },
     position: {
-      row: 0,
-      col: 0
+      row: { type: Number },
+      col: { type: Number }
     }
   }]
 })

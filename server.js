@@ -8,7 +8,7 @@ const app = express()
 const port = process.env.PORT || 8080
 const mongodbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/tic-tac-toe'
 
-mongoose.connect(mongodbUri, { useNewUrlParser: true })
+mongoose.connect(mongodbUri, { useNewUrlParser: true, useCreateIndex: true })
 app.set('json spaces', 2)
 app.use(cors())
 app.use(bodyParser.json())

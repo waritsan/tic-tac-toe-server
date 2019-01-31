@@ -3,7 +3,7 @@ const boardRouter = express.Router()
 const Board = require('../models/boardModel')
 
 boardRouter.route('/')
-  .get((req, res) => {
+  .get((_, res) => {
     Board.find({}, (err, boards) => {
       if (err) {
         res.json(err)
@@ -17,9 +17,7 @@ boardRouter.route('/')
 boardRouter.route('/create')
   .post((req, res) => {
     console.log(req.body)
-    let board = new Board({
-      history: req.body.history
-    })
+    let board = new Board(req.body)
     board.save(err => {
       if (err) {
         res.json(err)

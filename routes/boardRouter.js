@@ -1,6 +1,6 @@
 const express = require('express')
 const boardRouter = express.Router()
-const Board = require('../models/boardModel')
+const Board = require('../models/boardModel').model
 
 boardRouter.route('/')
   .get((_, res) => {

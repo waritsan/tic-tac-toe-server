@@ -11,4 +11,7 @@ var schema = new mongoose.Schema({
   }]
 })
 
-module.exports = mongoose.model('Board', schema)
+module.exports = {
+  schema: schema,
+  model: mongoose.model('Board', schema)
+}

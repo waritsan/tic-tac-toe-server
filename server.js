@@ -3,6 +3,7 @@ var cors = require('cors')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const boardRouter = require('./routes/boardRouter')
+const imageRouter = require('./routes/imageRouter')
 
 const app = express()
 const port = process.env.PORT || 8080
@@ -14,4 +15,5 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/api/boards', boardRouter)
+app.use('/api/images', imageRouter)
 app.listen(port, () => console.log(`Tic-Tac-Toe server is listening on port ${port}!`))

@@ -6,6 +6,7 @@ var schema = new mongoose.Schema({
   firstName: { type: String },
   lastName: { type: String },
   jobTitle: { type: String },
+  profileImageUrl: { type: String },
   board: boardSchema
 })
 

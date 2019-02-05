@@ -16,7 +16,6 @@ router.route('/')
 
 router.route('/create')
   .post((req, res) => {
-    console.log(req.body)
     let board = new Board(req.body)
     board.save(err => {
       if (err) {

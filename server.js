@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const boardRouter = require('./routes/boardRouter')
 const imageRouter = require('./routes/imageRouter')
+const userRouter = require('./routes/userRouter')
 
 const app = express()
 const port = process.env.PORT || 8080
@@ -16,4 +17,5 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/api/boards', boardRouter)
 app.use('/api/images', imageRouter)
+app.use('/api/users', userRouter)
 app.listen(port, () => console.log(`Tic-Tac-Toe server is listening on port ${port}!`))
